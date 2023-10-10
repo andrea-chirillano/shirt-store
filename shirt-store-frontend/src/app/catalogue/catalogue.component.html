@@ -1,16 +1,20 @@
-<div class="catalogo-remesas">
-    <div class="remera">
-      <img src="../../assets/images/shirt-eevee.jpeg" width="200" height="200" alt="Remera 1">
-      <h2>Shirt Eevee</h2>
-      <p>Shirt 1.</p>
-      <span>Price: $19.99</span>
+<div class="catalogue-container">
+  <button class="nav-arrow left-arrow" (click)="moveLeft()">&lt;</button>
+  <div class="catalogue-shirts">
+    <div
+      class="shirt"
+      *ngFor="let shirt of visibleShirts; let i = index"
+    >
+      <img
+        [src]="shirt.imageSrc"
+        [alt]="shirt.name"
+        [width]="shirt.width"
+        [height]="shirt.height"
+      />
+      <h2>{{ shirt.name }}</h2>
+      <p>{{ shirt.description }}</p>
+      <span>Price: {{ shirt.price }}</span>
     </div>
-  
-    <div class="remera">
-      <img src="../../assets/images/shirt-sylveon.jpg" width="200" height="200" alt="Remera 2">
-      <h2>Shirt Sylveon</h2>
-      <p>Shirt 2.</p>
-      <span>Price: $24.99</span>
-    </div>
-
   </div>
+  <button class="nav-arrow right-arrow" (click)="moveRight()">&gt;</button>
+</div>
