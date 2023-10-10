@@ -1,38 +1,88 @@
-.catalogo-remesas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center; 
-    gap: 20px;
-    text-align: center; 
-    margin-top: 60px;
+.catalogue-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 60px;
+  overflow: hidden;
+  position: relative;
+}
+
+.catalogue-shirts {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  width: 100%; 
+  margin: 0 auto; 
+}
+
+
+.shirt {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #000000;
+  text-align: center;
+  background: rgb(255, 255, 255);
+  margin-right: 10px;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  color: #000;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.shirt img {
+  max-width: 100%;
+}
+
+.shirt h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.shirt p {
+  font-size: 1rem;
+}
+
+.shirt span {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #000000;
+}
+
+@media (max-width: 767px) {
+  .catalogue-shirts {
+    display: block;
+    overflow-x: hidden;
   }
-  
-  
-  .remera {
-    width: 300px;
-    padding: 20px;
-    border: 1px solid #000000;
-    text-align: center;
-    background: rgb(255, 255, 255);
+
+  .shirt {
+    margin-bottom: 10px;
   }
-  
-  .remera img {
-    max-width: 100%;
+
+  .nav-arrow {
+    display: none;
   }
-  
-  .remera h2 {
-    font-size: 1.5rem;
-    margin: 10px 0;
-  }
-  
-  .remera p {
-    font-size: 1rem;
-  }
-  
-  .remera span {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #000000; 
-  }
-  
+}
