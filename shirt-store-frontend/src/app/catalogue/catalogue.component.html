@@ -1,10 +1,9 @@
 <div class="catalogue-container">
-  <button class="nav-arrow left-arrow" (click)="moveLeft()">&lt;</button>
+  <button class="nav-arrow left-arrow" (click)="moveLeft()">
+    <div class="nav-text">&lt;</div>
+  </button>
   <div class="catalogue-shirts">
-    <div
-      class="shirt"
-      *ngFor="let shirt of visibleShirts; let i = index"
-    >
+    <div class="shirt" *ngFor="let shirt of visibleShirts; let i = index">
       <img
         [src]="shirt.imageSrc"
         [alt]="shirt.name"
@@ -16,5 +15,7 @@
       <span>Price: {{ shirt.price }}</span>
     </div>
   </div>
-  <button class="nav-arrow right-arrow" (click)="moveRight()">&gt;</button>
+  <button class="nav-arrow right-arrow" (click)="moveRight()">
+    <div class="nav-text">&gt;</div>
+  </button>
 </div>
