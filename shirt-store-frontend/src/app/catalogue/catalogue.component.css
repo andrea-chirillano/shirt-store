@@ -17,13 +17,14 @@
   overflow-y: hidden;
   white-space: nowrap;
   padding-bottom: 10px;
-  width: 100%; 
+  width: 90%; 
   margin: 0 auto; 
 }
 
 
 .shirt {
-  width: 300px;
+  width: 180vw;
+  height: 60vh;
   padding: 20px;
   border: 1px solid #000000;
   text-align: center;
@@ -108,20 +109,30 @@
   z-index: 2;
 }
 
-.color-buttons {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .color-buttons button {
   width: 5px;
-  height: 5px;
+  height: 13px;
   margin: 2px;
-  border: none;
+  border: 1px solid black;
   cursor: pointer;
+  transition: background-color 0.3s;
+  outline: none;
 }
 
-.white { background-color: rgb(202, 202, 202); }
+.color-buttons {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 215px;
+}
+
+.shirt-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.white { background-color: white; }
 .gray { background-color: gray; }
 .black { background-color: black; }
 .pink { background-color: pink; }
@@ -132,3 +143,7 @@
 .lightblue { background-color: lightblue; }
 .blue { background-color: blue; }
 .purple { background-color: purple; }
+
+.color-buttons button:hover {
+  filter: saturate(50%);
+}
