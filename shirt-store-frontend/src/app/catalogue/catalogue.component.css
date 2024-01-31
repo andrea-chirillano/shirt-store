@@ -134,7 +134,7 @@
 
 .white { background-color: white; }
 .gray { background-color: gray; }
-.black { background-color: black; }
+.black { background-color: rgb(51, 51, 51); }
 .pink { background-color: pink; }
 .red { background-color: red; }
 .orange { background-color: orange; }
@@ -145,5 +145,5 @@
 .purple { background-color: purple; }
 
 .color-buttons button:hover {
-  filter: saturate(50%);
+  filter: brightness(75%);
 }
