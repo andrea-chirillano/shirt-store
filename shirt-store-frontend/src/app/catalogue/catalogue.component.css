@@ -37,7 +37,7 @@
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
-  background-color: #fff;
+  background-color: #dadada;
   color: #000;
   font-size: 24px;
   text-align: center;
@@ -93,3 +93,42 @@
     display: none;
   }
 }
+
+.shirt-container {
+  position: relative;
+  display: inline-block;
+}
+
+.shirt-image{
+  z-index: 1
+}
+
+.pokemon-overlay {
+  position: absolute;
+  z-index: 2;
+}
+
+.color-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.color-buttons button {
+  width: 5px;
+  height: 5px;
+  margin: 2px;
+  border: none;
+  cursor: pointer;
+}
+
+.white { background-color: rgb(202, 202, 202); }
+.gray { background-color: gray; }
+.black { background-color: black; }
+.pink { background-color: pink; }
+.red { background-color: red; }
+.orange { background-color: orange; }
+.yellow { background-color: yellow; }
+.green { background-color: green; }
+.lightblue { background-color: lightblue; }
+.blue { background-color: blue; }
+.purple { background-color: purple; }

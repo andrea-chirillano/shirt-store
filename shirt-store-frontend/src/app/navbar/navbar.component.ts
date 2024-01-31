@@ -9,7 +9,7 @@ import { LogginModalService } from '../services/loggin-modal.service';
 export class NavbarComponent {
   constructor(private logginModalService: LogginModalService) {}
 
-  openModal() {
-    this.logginModalService.openModal();
+  openModal(): void {
+    this.logginModalService.showModal();
   }
 }
