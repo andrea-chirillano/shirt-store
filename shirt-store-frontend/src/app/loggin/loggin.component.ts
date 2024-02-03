@@ -1,6 +1,5 @@
-// login.component.ts
+// loggin.component.ts
 import { Component } from '@angular/core';
-import { LogginModalService } from '../services/loggin-modal.service';
 
 @Component({
   selector: 'app-loggin',
@@ -8,13 +7,5 @@ import { LogginModalService } from '../services/loggin-modal.service';
   styleUrls: ['./loggin.component.css']
 })
 export class LogginComponent {
-  constructor(private logginModalService: LogginModalService) {}
 
-  closeModal(): void {
-    this.logginModalService.hideModal();
-  }
-
-  isModalVisible(): void {
-    this.logginModalService.isModalVisible();
-  }
 }
