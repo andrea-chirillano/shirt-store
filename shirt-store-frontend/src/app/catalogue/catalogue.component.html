@@ -1,51 +1,49 @@
-<div class="catalogue-container">
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-8bits" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+
+<div *ngIf="showCatalogue" class="catalogue-container">
   <button class="nav-arrow left-arrow" (click)="moveLeft()">
     <div class="nav-text">&lt;</div>
   </button>
   <div class="catalogue-shirts">
-    <div class="shirt" *ngFor="let shirt of visibleShirts; let i = index">
+    <div class="shirt" *ngFor="let shirt of visiblePokemonNames; let i = index">
       <div
         class="shirt-container"
-        [style.width.px]="shirt.width"
-        [style.height.px]="shirt.height"
+        [style.width.px]="shirts[shirt.index-1].width"
+        [style.height.px]="shirts[shirt.index-1].height"
       >
       <div class="color-buttons">
-        <button (click)="changeColor('white', i)" class="white"></button>
-        <button (click)="changeColor('gray', i)" class="gray"></button>
-        <button (click)="changeColor('black', i)" class="black"></button>
-        <button (click)="changeColor('pink', i)" class="pink"></button>
-        <button (click)="changeColor('red', i)" class="red"></button>
-        <button (click)="changeColor('orange', i)" class="orange"></button>
-        <button (click)="changeColor('yellow', i)" class="yellow"></button>
-        <button (click)="changeColor('green', i)" class="green"></button>
-        <button (click)="changeColor('lightblue', i)" class="lightblue"></button>
-        <button (click)="changeColor('blue', i)" class="blue"></button>
-        <button (click)="changeColor('purple', i)" class="purple"></button>
+        <button (click)="changeColor('white', shirt.index-1)" class="white"></button>
+        <button (click)="changeColor('gray', shirt.index-1)" class="gray"></button>
+        <button (click)="changeColor('black', shirt.index-1)" class="black"></button>
+        <button (click)="changeColor('pink', shirt.index-1)" class="pink"></button>
+        <button (click)="changeColor('red', shirt.index-1)" class="red"></button>
+        <button (click)="changeColor('orange', shirt.index-1)" class="orange"></button>
+        <button (click)="changeColor('yellow', shirt.index-1)" class="yellow"></button>
+        <button (click)="changeColor('green', shirt.index-1)" class="green"></button>
+        <button (click)="changeColor('lightblue', shirt.index-1)" class="lightblue"></button>
+        <button (click)="changeColor('blue', shirt.index-1)" class="blue"></button>
+        <button (click)="changeColor('purple', shirt.index-1)" class="purple"></button>
       </div>
       
         <img
           class="shirt-image"
-          [src]="shirt.imageSrc"
-          [alt]="shirt.name"
-          [width]="shirt.width"
-          [height]="shirt.height"
-          [style.background-color]="shirt.color"
+          [src]="shirts[shirt.index-1].imageSrc"
+          [width]="shirts[shirt.index-1].width"
+          [height]="shirts[shirt.index-1].height"
+          [style.background-color]="shirts[shirt.index-1].color"
         />
         <img
           class="pokemon-overlay"
-          *ngIf="shirt.pokemonOverlaySrc"
-          [src]="shirt.pokemonOverlaySrc"
-          [alt]="'Pokemon Overlay'"
-          [width]="shirt.widthPokemon"
-          [height]="shirt.heightPokemon"
-          [style.left.px]="(shirt.width - shirt.widthPokemon) / 2"
-          [style.top.px]="(shirt.height - shirt.heightPokemon) / 2"
+          [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + shirt.index + '.png'"
+          [width]="100"
+          [height]="100"
         />
-        <h2>{{ shirt.name }}</h2>
-        <p>{{ shirt.description }}</p>
-        <span>Price: {{ shirt.price }}</span>
+        <h2>{{ capitalizeFirstLetter(shirt.name) }}</h2>
+        <p>Shirt {{shirt.index}}</p>
+        <span>Price: 3.99</span>
       </div>
     </div>
+
   </div>
   <button class="nav-arrow right-arrow" (click)="moveRight()">
     <div class="nav-text">&gt;</div>

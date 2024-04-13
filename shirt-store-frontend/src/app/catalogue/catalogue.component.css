@@ -1,3 +1,5 @@
+@import 'node_modules/ngx-spinner/animations/ball-8bits.css';
+
 .catalogue-container {
   display: flex;
   align-items: center;
@@ -107,6 +109,9 @@
 .pokemon-overlay {
   position: absolute;
   z-index: 2;
+  left: 50px;
+  top: 50px;
+  image-rendering: pixelated;
 }
 
 .color-buttons button {
