@@ -7,7 +7,7 @@ import { User } from '../models/user.model';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:8080/api/users'; // Reemplaza con la URL de tu backend
+  private apiUrl = 'http://localhost:8080/api/users';
 
   constructor(private http: HttpClient) { }
 
@@ -30,6 +30,4 @@ export class UserService {
   deleteUserById(userId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/delete/${userId}`);
   }
-
-  // Otros métodos según las operaciones que necesites
 }

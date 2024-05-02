@@ -40,7 +40,18 @@
         />
         <h2>{{ capitalizeFirstLetter(shirt.name) }}</h2>
         <p>Shirt {{shirt.index}}</p>
-        <span>Price: 3.99</span>
+        <label for="size" class="text-size">Size: </label>
+        <select id="size" name="size" class="size">
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+            <option value="XXXL">XXL</option>
+        </select>
+        <span class="price">Price: 3.99</span>
+        <button class="buy">Buy</button>
       </div>
     </div>
 

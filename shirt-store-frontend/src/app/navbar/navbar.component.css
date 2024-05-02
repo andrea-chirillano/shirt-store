@@ -1,0 +1,12 @@
+.navbar-brand{
+    transform: rotate(-35deg);
+}
+
+.svg-icon {
+    width: 2em; /* Ajusta el tamaño según sea necesario */
+    height: 2em; /* Ajusta el tamaño según sea necesario */
+}
+
+.material-symbols-outlined{
+    margin-top: -10px;
+}

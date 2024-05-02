@@ -6,7 +6,7 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
   overflow: hidden;
   position: relative;
 }
@@ -18,15 +18,15 @@
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  padding-bottom: 10px;
+  padding-bottom: 30vh;
   width: 90%; 
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 
 .shirt {
   width: 180vw;
-  height: 60vh;
+  height: 70vh;
   padding: 20px;
   border: 1px solid #000000;
   text-align: center;
@@ -36,7 +36,7 @@
 
 .nav-arrow {
   position: absolute;
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
@@ -80,6 +80,28 @@
   font-size: 1.25rem;
   font-weight: bold;
   color: #000000;
+}
+
+.shirt label{
+  font-size: 1rem;
+}
+
+.size {
+  margin-bottom: 10px;
+}
+
+.text-size{
+  margin-right: 5px;
+  left: 10px;
+}
+
+.price {
+  display: block;
+  margin-bottom: 10px
+}
+
+.buy {
+  margin-bottom: 10px;
 }
 
 @media (max-width: 767px) {

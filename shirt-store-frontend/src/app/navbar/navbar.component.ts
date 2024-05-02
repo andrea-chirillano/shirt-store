@@ -11,9 +11,13 @@ export class NavbarComponent {
 
     constructor(private searchService: SearchService) {}
 
-    onSearchChange(event: Event) {
-        const target = event.target as HTMLInputElement;
-        this.searchTerm = target.value;
+    onSearchChange() {
         this.searchService.setSearchTerm(this.searchTerm);
+        console.log(this.searchTerm, "1")
     }
+    
+    onSearchSubmit() {
+        this.onSearchChange();
+    }
+
 }
