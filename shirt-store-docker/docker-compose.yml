@@ -9,42 +9,47 @@ services:
     volumes:
       - ../shirt-store-frontend:/app
     command: npm start
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - shirt-store-net
 
   backend:
     build:
       context: ../shirt-store-backend
     ports:
       - "8080:8080"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/shirt-store
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD:
-    depends_on:
-      - mysql
+    networks:
+      - shirt-store-net
 
   mysql:
     image: mysql:5.7
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: miel123
-      MYSQL_DATABASE: shirt-store
-      MYSQL_USER: root
-      MYSQL_PASSWORD:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=shirt-store
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pass1234
     volumes:
       - mysql-data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    networks:
+      - shirt-store-net
   
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
       - "8081:80"  
     environment:
-      PMA_HOST: mysql
-      PMA_USER: root   
-      PMA_PASSWORD: miel123 
-      PMA_ARBITRARY: 1  
+      - PMA_HOST=mysql
     depends_on:
       - mysql
+    networks:
+      - shirt-store-net
 
 volumes:
   mysql-data:
+
+networks:
+  shirt-store-net:
