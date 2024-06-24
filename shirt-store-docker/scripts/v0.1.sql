@@ -1,10 +1,43 @@
-ALTER TABLE pokemons MODIFY name VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+START TRANSACTION;
 
+CREATE TABLE IF NOT EXISTS color (
+    id INT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+ALTER TABLE color MODIFY name VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
+CREATE TABLE IF NOT EXISTS user (
+    id INT PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    fecha DATE NOT NULL
+);
+
+INSERT INTO color (id, name) VALUES
+(1, 'black'),
+(2, 'blue'),
+(3, 'gray'),
+(4, 'green'),
+(5, 'lightblue'),
+(6, 'orange'),
+(7, 'pink'),
+(8, 'purple'),
+(9, 'red'),
+(10, 'white'),
+(12, 'yellow')
 
 CREATE TABLE IF NOT EXISTS pokemons (
     id INT PRIMARY KEY,
     name VARCHAR(255) NOT NULL
 );
+
+ALTER TABLE pokemons MODIFY name VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
 
 INSERT INTO pokemons (id, name) VALUES
 (1,'Bulbasaur'),
@@ -816,7 +849,6 @@ INSERT INTO pokemons (id, name) VALUES
 (807,'Zeraora'),
 (808,'Meltan'),
 (809,'Melmetal'),
-(550,'Basculin raya blanca25'),
 (810,'Grookey'),
 (811,'Thwackey'),
 (812,'Rillaboom'),
@@ -913,3 +945,5 @@ INSERT INTO pokemons (id, name) VALUES
 (903,'Sneasler'),
 (904,'Overqwil'),
 (905,'Enamorus')
+
+COMMIT;
